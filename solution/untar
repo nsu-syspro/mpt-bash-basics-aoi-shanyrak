@@ -13,6 +13,6 @@ if [ ! -f "$archive" ]; then
      exit 1
 fi
 
-mkdir "$newd"
+mkdir -p "$newd"
 
 tar -xf "$archive" -C "$newd"
