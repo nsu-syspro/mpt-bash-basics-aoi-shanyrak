@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+if [ $# -ne 1 ]; then
+    echo "Incorrect amount of variables" >&2
+    exit 1
+fi
+
+archive="$1"
+newd="${archive}.unpacked"
+
+if [ ! -f "$archive" ]; then
+     echo "archive '$archive' not found" >&2
+     exit 1
+fi
+
+mkdir -p "$newd"
+
+tar -xf "$archive" -C "$newd"

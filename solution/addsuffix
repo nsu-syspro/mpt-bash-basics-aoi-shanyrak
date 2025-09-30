@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if [ $# -lt 2 ]; then
+    exit 1
+fi
+
+suffix="$1"
+shift
+
+for file in "$@"; do
+    mv "$file" "$file$suffix"
+done
