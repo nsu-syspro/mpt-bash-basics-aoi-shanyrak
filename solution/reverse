@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+lines=()
+count=0
+while read line; do
+    lines+=("$line")
+    ((count++))
+done
+for i in $(seq $count -1 0); do
+    echo "${lines[i]}"
+done
